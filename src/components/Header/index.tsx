@@ -1,11 +1,18 @@
 import logoImg from "../../assets/logo.svg";
 import { Container, Content } from "./styles";
-export function Header() {
+
+interface HeaderProps {
+  onOpenNewTransaction: () => void;
+}
+
+export function Header({ onOpenNewTransaction }: HeaderProps) {
+
   return (
     <Container>
       <Content>
         <img src={logoImg} alt="jbmoney" />
-        <button type="button">Nova transação</button>
+        <button onClick={onOpenNewTransaction} type="button" >Nova transação</button>
+
       </Content>
     </Container>
   );
